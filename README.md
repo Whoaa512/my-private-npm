@@ -1,0 +1,1 @@
+Ghetto version of npm for local dev only; Idea here is to encourage making my own code more modular without going all out and making it useful to all of npm

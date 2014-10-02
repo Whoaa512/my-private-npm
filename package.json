@@ -1,0 +1,11 @@
+{
+  "name": "my-private-npm",
+  "version": "0.0.1",
+  "description": "Ghetto version of npm for local dev only; Idea here is to encourage making my own code more modular without going all out and making it useful to all of npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "whoaa512",
+  "license": "MIT"
+}
