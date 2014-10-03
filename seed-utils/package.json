@@ -1,0 +1,14 @@
+{
+  "name": "seed-utils",
+  "version": "1.0.0",
+  "description": "small set of utilities best paired with my mithril seed repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "whoaa512",
+  "license": "MIT",
+  "dependencies": {
+    "mithril": "^0.1.22"
+  }
+}
