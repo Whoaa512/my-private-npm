@@ -72,6 +72,8 @@ md6Xs12 = mdColXs12 6
 md7Xs12 = mdColXs12 7
 md8Xs12 = mdColXs12 8
 md9Xs12 = mdColXs12 9
+md10Xs12 = mdColXs12 10
+md11Xs12 = mdColXs12 11
 md12Xs12 = mdColXs12 12
 
 
@@ -95,6 +97,8 @@ bs = {
   md7Xs12
   md8Xs12
   md9Xs12
+  md10Xs12
+  md11Xs12
   md12Xs12
 }
 
