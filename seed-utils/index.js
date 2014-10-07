@@ -112,7 +112,7 @@
     if (attrs == null) {
       attrs = {};
     }
-    return m('.layout.container-fluid', attrs, [m('header', nav), m('main', body)]);
+    return m('.layout.container-fluid', attrs, m('.row', [m('header', nav), m('main', body)]));
   };
 
   bs = {

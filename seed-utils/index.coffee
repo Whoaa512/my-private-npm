@@ -77,10 +77,11 @@ md12Xs12 = mdColXs12 12
 
 # mithril suggested helper
 layout = (nav, body, attrs = {})->
-  m '.layout.container-fluid', attrs, [
-    m 'header', nav
-    m 'main', body
-  ]
+  m '.layout.container-fluid', attrs,
+    m '.row', [
+      m 'header', nav
+      m 'main', body
+    ]
 
 # create bootstrap helpers namespace
 bs = {
