@@ -70,12 +70,10 @@ _.each [1..12], (num)->
   bs["md#{num}Xs6"] = mdColXs6(num)
 
 label = (attrs)->
-  console.log attrs
   { staticCss, content } = attrs
   staticCss ?= ''
   delete attrs.staticCss
   delete attrs.content
-  console.log attrs, staticCss, content
   m "label#{staticCss}", attrs, content
 
 input = (attrs)->
@@ -84,7 +82,6 @@ input = (attrs)->
   staticCss ?= ''
   delete attrs.tag
   delete attrs.staticCss
-  console.log attrs, staticCss, tag
   m "#{tag}.form-control#{staticCss}", attrs
 
 formGroup = (opts)->

@@ -97,14 +97,12 @@
 
   label = function(attrs) {
     var content, staticCss;
-    console.log(attrs);
     staticCss = attrs.staticCss, content = attrs.content;
     if (staticCss == null) {
       staticCss = '';
     }
     delete attrs.staticCss;
     delete attrs.content;
-    console.log(attrs, staticCss, content);
     return m("label" + staticCss, attrs, content);
   };
 
@@ -119,7 +117,6 @@
     }
     delete attrs.tag;
     delete attrs.staticCss;
-    console.log(attrs, staticCss, tag);
     return m("" + tag + ".form-control" + staticCss, attrs);
   };
 
