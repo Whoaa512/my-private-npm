@@ -120,7 +120,7 @@
     delete attrs.tag;
     delete attrs.staticCss;
     console.log(attrs, staticCss, tag);
-    return m("" + tag + staticCss, attrs);
+    return m("" + tag + ".form-control" + staticCss, attrs);
   };
 
   formGroup = function(opts) {

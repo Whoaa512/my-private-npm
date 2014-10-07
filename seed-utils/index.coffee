@@ -85,7 +85,7 @@ input = (attrs)->
   delete attrs.tag
   delete attrs.staticCss
   console.log attrs, staticCss, tag
-  m "#{tag}#{staticCss}", attrs
+  m "#{tag}.form-control#{staticCss}", attrs
 
 formGroup = (opts)->
   opts = _.clone opts
