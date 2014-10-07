@@ -69,6 +69,37 @@ _.each [1..12], (num)->
   bs["md#{num}Xs12"] = mdColXs12(num)
   bs["md#{num}Xs6"] = mdColXs6(num)
 
+label = (attrs)->
+  console.log attrs
+  { staticCss, content } = attrs
+  staticCss ?= ''
+  delete attrs.staticCss
+  delete attrs.content
+  console.log attrs, staticCss, content
+  m "label#{staticCss}", attrs, content
+
+input = (attrs)->
+  { tag, staticCss} = attrs
+  tag ?= 'input'
+  staticCss ?= ''
+  delete attrs.tag
+  delete attrs.staticCss
+  console.log attrs, staticCss, tag
+  m "#{tag}#{staticCss}", attrs
+
+formGroup = (opts)->
+  opts = _.clone opts
+  m '.form-group',
+    label(opts.label),
+    input(opts.input)
+
+# add to bootstrap namespace
+_.extend bs, {
+  row
+  formGroup
+  input
+  label
+}
 
 # mithril suggested helper
 layout = (nav, body, attrs = {})->
