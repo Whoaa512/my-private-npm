@@ -40,6 +40,7 @@ cycleTabs = (idList, wait)->
 
 
 # Layout helpers (bootstrap specific)
+bs = {}
 
 row = (extras..., children) ->
   # allow staticCss and/or attrs
@@ -63,18 +64,10 @@ col = _.curry (xs, md, staticCss, content) ->
 mdColXs12 = col 12
 mdColXs6 = col 6
 
-md1Xs12 = mdColXs12 1
-md2Xs12 = mdColXs12 2
-md3Xs12 = mdColXs12 3
-md4Xs12 = mdColXs12 4
-md5Xs12 = mdColXs12 5
-md6Xs12 = mdColXs12 6
-md7Xs12 = mdColXs12 7
-md8Xs12 = mdColXs12 8
-md9Xs12 = mdColXs12 9
-md10Xs12 = mdColXs12 10
-md11Xs12 = mdColXs12 11
-md12Xs12 = mdColXs12 12
+# generate the column helpers
+_.each [1..12], (num)->
+  bs["md#{num}Xs12"] = mdColXs12(num)
+  bs["md#{num}Xs6"] = mdColXs6(num)
 
 
 # mithril suggested helper
@@ -85,22 +78,6 @@ layout = (nav, body, attrs = {})->
       m 'main', body
     ]
 
-# create bootstrap helpers namespace
-bs = {
-  row
-  md1Xs12
-  md2Xs12
-  md3Xs12
-  md4Xs12
-  md5Xs12
-  md6Xs12
-  md7Xs12
-  md8Xs12
-  md9Xs12
-  md10Xs12
-  md11Xs12
-  md12Xs12
-}
 
 module.exports = {
   storeLocally
