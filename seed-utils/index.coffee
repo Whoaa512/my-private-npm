@@ -77,12 +77,16 @@ label = (attrs)->
   m "label#{staticCss}", attrs, content
 
 input = (attrs)->
-  { tag, staticCss} = attrs
+  { tag, staticCss, content } = attrs
   tag ?= 'input'
   staticCss ?= ''
+  content ?= null
   delete attrs.tag
   delete attrs.staticCss
-  m "#{tag}.form-control#{staticCss}", attrs
+  delete attrs.content
+  args = ["#{tag}.form-control#{staticCss}", attrs]
+  if content? then args.push content
+  m.apply null, args
 
 formGroup = (opts)->
   opts = _.clone opts
