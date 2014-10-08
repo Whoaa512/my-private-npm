@@ -88,11 +88,25 @@ input = (attrs)->
   if content? then args.push content
   m.apply null, args
 
-formGroup = (opts)->
+formGroup = (params...)->
+  if params.length is 3
+    [attrs, opts, content] = params
+  else if params.length is 2
+    [attrs, opts] = params
+  else
+    [opts] = params
   opts = _.clone opts
-  m '.form-group',
-    label(opts.label),
+  attrs ?= {}
+  content ?= null
+
+  args = [
+    '.form-group'
+    attrs
+    label(opts.label)
     input(opts.input)
+  ]
+  if content? then args.push content
+  m.apply(null, args)
 
 # add to bootstrap namespace
 _.extend bs, {
