@@ -107,22 +107,49 @@
   };
 
   input = function(attrs) {
-    var staticCss, tag;
-    tag = attrs.tag, staticCss = attrs.staticCss;
+    var args, content, staticCss, tag;
+    tag = attrs.tag, staticCss = attrs.staticCss, content = attrs.content;
     if (tag == null) {
       tag = 'input';
     }
     if (staticCss == null) {
       staticCss = '';
     }
+    if (content == null) {
+      content = null;
+    }
     delete attrs.tag;
     delete attrs.staticCss;
-    return m("" + tag + ".form-control" + staticCss, attrs);
+    delete attrs.content;
+    args = ["" + tag + ".form-control" + staticCss, attrs];
+    if (content != null) {
+      args.push(content);
+    }
+    return m.apply(null, args);
   };
 
-  formGroup = function(opts) {
+  formGroup = function() {
+    var args, attrs, content, opts, params;
+    params = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+    if (params.length === 3) {
+      attrs = params[0], opts = params[1], content = params[2];
+    } else if (params.length === 2) {
+      attrs = params[0], opts = params[1];
+    } else {
+      opts = params[0];
+    }
     opts = _.clone(opts);
-    return m('.form-group', label(opts.label), input(opts.input));
+    if (attrs == null) {
+      attrs = {};
+    }
+    if (content == null) {
+      content = null;
+    }
+    args = ['.form-group', attrs, label(opts.label), input(opts.input)];
+    if (content != null) {
+      args.push(content);
+    }
+    return m.apply(null, args);
   };
 
   _.extend(bs, {
