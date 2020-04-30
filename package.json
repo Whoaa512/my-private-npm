@@ -4,11 +4,15 @@
   "description": "Ghetto version of npm for local dev only; Idea here is to encourage making my own code more modular without going all out and making it useful to all of npm",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "whoaa512",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.15"
-  }
+    "lodash": "^4.17.15",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
