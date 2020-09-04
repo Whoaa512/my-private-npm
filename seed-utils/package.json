@@ -9,6 +9,6 @@
   "author": "whoaa512",
   "license": "MIT",
   "dependencies": {
-    "mithril": "^0.1.22"
+    "mithril": "^2.0.4"
   }
 }
